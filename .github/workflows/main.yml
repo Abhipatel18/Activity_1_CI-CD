@@ -14,6 +14,39 @@
 #       - run: npm test
 
 
+# name: Node.js CI
+
+# on:
+#   push:
+#     branches: [ main ]
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       # Step 1: Checkout code
+#       - uses: actions/checkout@v3  # Still using v3 for actions/checkout, as v5 is not available yet
+
+#       # Step 2: Set up Node.js
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v3  # Node.js setup on v3
+
+#       # Step 3: Install dependencies
+#       - name: Install dependencies
+#         run: npm install
+
+#       # Step 4: Run tests (with coverage)
+#       - name: Run tests with coverage
+#         run: npm test -- --coverage
+
+#       # Step 5: Upload coverage to Codecov
+#       - name: Upload coverage to Codecov
+#         uses: codecov/codecov-action@v5.4.2  # Correct version of Codecov action (v5.4.2)
+#         with:
+#           token: ${{ secrets.CODECOV_TOKEN }}
+
+
 name: Node.js CI
 
 on:
@@ -25,23 +58,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout code
-      - uses: actions/checkout@v3  # Still using v3 for actions/checkout, as v5 is not available yet
+      - uses: actions/checkout@v3
 
-      # Step 2: Set up Node.js
       - name: Set up Node.js
-        uses: actions/setup-node@v3  # Node.js setup on v3
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-      # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Run tests (with coverage)
       - name: Run tests with coverage
         run: npm test -- --coverage
 
-      # Step 5: Upload coverage to Codecov
+      - name: List coverage files
+        run: ls -R coverage
+
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v5.4.2  # Correct version of Codecov action (v5.4.2)
+        uses: codecov/codecov-action@v5.4.2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+          files: coverage/lcov.info
+
