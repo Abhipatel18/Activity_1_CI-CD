@@ -4,8 +4,11 @@
   "description": "It is a simple node js application with package.json.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No tests yet\""
-  },
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  }
   "author": "Abhi Patel",
   "license": "ISC"
 }
