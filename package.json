@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "test": "echo \"No tests yet\""
-  }
+    "test": "echo \"No tests yet\""
+  },
   "author": "",
   "license": "ISC"
 }
