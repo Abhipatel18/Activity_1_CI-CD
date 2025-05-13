@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "It is a simple node js application with package.json.",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"No tests yet\" && exit 0"
-  },
+"scripts": {
+  "start": "node index.js",
+  "build": "echo 'No build needed' && exit 0",
+  "test": "echo \"No tests yet\" && exit 0"
+},
   "author": "Abhi Patel",
   "license": "ISC"
 }
