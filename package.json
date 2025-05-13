@@ -1,11 +1,11 @@
 {
-  "name": "your-project-name",
+  "name": "NodeJS",
   "version": "1.0.0",
-  "description": "",
+  "description": "It is a simple node js application with package.json.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"No tests yet\""
   },
-  "author": "",
+  "author": "Abhi Patel",
   "license": "ISC"
 }
